@@ -8,14 +8,13 @@ int main(int argc, char * argv[])
     if (argc <= 1){
         final_str = "n";
     } else {
-
         size_t size = 0; // start with size 1 for \0 (terminator)
-
+        
         for(int i = 1; i < argc; i++){
             size += strlen(argv[i]) + 1;
         }
+        
         //getting the size
-
         final_str = malloc(size); //malloc new string
         int offset = 0;
         for(int i = 1; i < argc; i++){ // for all args
@@ -24,15 +23,13 @@ int main(int argc, char * argv[])
             offset += len + 1; // increment offset by length of string and 1 bnus for space
             final_str[offset-1] = ' '; // add space
         }
-        final_str[size-1] = '\0';
-
+        final_str[size-1] = '\0'; // add the terminator character, and btw removes the unwanted last space
         
-        printf("%s\n", final_str);
-        
+        // revert the string
         int i = 0;
         int j = size - 2;
         while (i < j){
-            if (final_str[i] != final_str[j]){
+            if (final_str[i] != final_str[j]){ // XOR swapping
                 final_str[i] ^= final_str[j];
                 final_str[j] ^= final_str[i];
                 final_str[i] ^= final_str[j];
