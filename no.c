@@ -8,7 +8,7 @@ int main(int argc, char * argv[])
     if (argc <= 1){
         final_str = "n";
     } else {
-        size_t size = 0; // start with size 1 for \0 (terminator)
+        size_t size = 0;
         
         for(int i = 1; i < argc; i++){
             size += strlen(argv[i]) + 1;
