@@ -23,7 +23,7 @@ int main(int argc, char * argv[])
             offset += len + 1; // increment offset by length of string and 1 bnus for space
             final_str[offset-1] = ' '; // add space
         }
-        final_str[size-1] = '\0'; // add the terminator character, and btw removes the unwanted last space
+        final_str[size-1] = '\0'; // add the terminator character, and btw remove the unwanted last space
         
         // revert the string
         int i = 0;
